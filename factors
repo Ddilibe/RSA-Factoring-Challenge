@@ -1,33 +1,25 @@
 #!/usr/bin/python3
-"""Module that factorize as many numbers as possible
- into a product of two smaller numbers."""
-from sys import argv
+import sys
+from check import cleanning, result, compute_non_prime_numbers
+
+""" Function for deleviering result meant for the factor"""
 
 
-def factorize(value):
-    """"print a simple descomposition of an integer > 1"""
-    i = 2
+def factor():
+	d = sys.argv
 
-    if value < 2:
-        return
-    print()
-    print(value, "<- value-bef")
-    while value % i:
-        i += 1
-    print("{:.0f}={:.0f}*{:.0f}".format(value, value / i, i))
-    print(value, "<- value-aft")
-    print()
+	if 1 < len(sys.argv) < 3:
+		f = open(d[-1], 'r')
+		e = f.readline()
+		q = cleanning('\n', list(e))
+		while len(e) > 1:
+			w, u = compute_non_prime_numbers(q)
+			result(w, u, q)
+			e = f.readline()
+			if len(e) > 0:
+				q = cleanning('\n', list(e))
+		f.close()
 
-if len(argv) != 2:
-    exit()
 
-try:
-    with open(argv[1]) as file:
-        line = file.readline()
-
-        while line != "":
-            value = int(line.split('\n')[0])
-            factorize(value)
-            line = file.readline()
-except:
-    pass
+if __name__ == '__main__':
+	factor()
