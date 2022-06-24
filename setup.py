@@ -1,0 +1,21 @@
+setup(
+    name="RSA Factoring Challenge",
+    version="1.0.0",
+    description="A programming aim at developing a function for prime numbers",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    url="https://github.com/Ddilibe/RSA-factoring-challenge",
+    author="Dilibe",
+    author_email="franklifidelugwuwowo@gmail.com",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+    ],
+    packages=["reader"],
+    include_package_data=True,
+    install_requires=[],
+    entry_points={"console_scripts": ["RSAFactoringChallenge=rsa:rsa"]},
+)

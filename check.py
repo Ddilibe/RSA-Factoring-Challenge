@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-import json
-
+from prime import Prime
 """
 This document is used for cleaning the data set
 It also contains other related functions
@@ -28,19 +27,19 @@ def result(i, k, y):
 prime numbers inputed in a jjson file """
 
 
-def obtain_prime_numbers():
-	with open('prime.json', 'r') as file:
-		numbers = json.load(file)
-		prime = numbers['Prime']
-		file.close()
-		return (prime)
+# def obtain_prime_numbers():
+# 	with open('prime.json', 'r') as file:
+# 		numbers = json.load(file)
+# 		prime = numbers['Prime']
+# 		file.close()
+# 		return (prime)
 
 
 """ Function for computing  and delivering the prime numbers """
 
 
 def compute_prime_numbers(value):
-	prime = obtain_prime_numbers()
+	prime = Prime()
 	i = 2
 	while True:
 		w = value % i

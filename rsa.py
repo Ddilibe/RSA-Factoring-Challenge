@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
-from check import (obtain_prime_numbers,
-                   cleanning, compute_prime_numbers, result)
+from check import ( cleanning, compute_prime_numbers, result)
 
 """ Function for running the prime number forum"""
 
@@ -12,7 +11,6 @@ def rsa():
 		f = open(sys.argv[-1], 'r')
 		e = f.readline()
 		q = cleanning('\n', list(e))
-		prime = obtain_prime_numbers()
 		while len(e) > 0:
 			w, u = compute_prime_numbers(q)
 			result(w, u, q)
